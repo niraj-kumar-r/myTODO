@@ -7,7 +7,7 @@ import TodoFooter from "./components/TodoFooter";
 import "./App.css";
 
 function App() {
-    // const [todoList, setTodoList] = useState([]);
+    const [todoList, setTodoList] = useState([]);
     const [lightMode, setLightMode] = useState(true);
 
     const handleThemeToggle = () => {
@@ -19,11 +19,15 @@ function App() {
         }
     };
 
+    const handleAddTodo = (text) => {
+        setTodoList([...todoList, { text, completed: false }]);
+    };
+
     return (
         <>
             <TodoHeader lightMode={lightMode} onToggle={handleThemeToggle} />
-            <TodoForm />
-            <TodoList />
+            <TodoForm onSubmit={handleAddTodo} />
+            <TodoList todoList={todoList} />
             <TodoListFilter />
             <TodoFooter />
         </>

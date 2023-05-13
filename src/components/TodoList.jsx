@@ -1,20 +1,16 @@
-// import TodoItem from "./TodoItem";
+import TodoItem from "./TodoItem";
+import PropTypes from "prop-types";
 
-export default function TodoList() {
+export default function TodoList({ todoList }) {
     return (
         <ul className="todo-list">
-            {/* {todoList.map((todo) => (
-                <TodoItem key={todo.id} todo={todo} />
-            ))} */}
-            <li className="todo-item">
-                <div className="todo-item-left">
-                    <input type="checkbox" />
-                    <span>Hello, world</span>
-                </div>
-                <div className="todo-item-right">
-                    <button className="remove-todo">X</button>
-                </div>
-            </li>
+            {todoList.map((todo, index) => (
+                <TodoItem key={index} todo={todo.text} />
+            ))}
         </ul>
     );
 }
+
+TodoList.propTypes = {
+    todoList: PropTypes.array.isRequired,
+};
