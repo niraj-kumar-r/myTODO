@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 export default function TodoHeader({ lightMode, onToggle }) {
     return (
         <header className="header">
-            <h1>TODO</h1>
+            <h1 className="header-TODO">TODO</h1>
             <img
                 className="toggle-theme-button"
-                src={lightMode ? sun : moon}
+                src={lightMode ? moon : sun}
                 onClick={onToggle}
             />
         </header>
