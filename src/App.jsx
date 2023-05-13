@@ -35,11 +35,21 @@ function App() {
         setTodoList(newTodoList);
     };
 
+    const handleDeleteTodo = (index) => {
+        const newTodoList = [...todoList];
+        newTodoList.splice(index, 1);
+        setTodoList(newTodoList);
+    };
+
     return (
         <>
             <TodoHeader lightMode={lightMode} onToggle={handleThemeToggle} />
             <TodoForm onSubmit={handleAddTodo} />
-            <TodoList todoList={todoList} onComplete={handleCompleteTodo} />
+            <TodoList
+                todoList={todoList}
+                onComplete={handleCompleteTodo}
+                onDelete={handleDeleteTodo}
+            />
             <TodoListFilter />
             <TodoFooter />
         </>
