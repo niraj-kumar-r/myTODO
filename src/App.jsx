@@ -10,9 +10,18 @@ function App() {
     // const [todoList, setTodoList] = useState([]);
     const [lightMode, setLightMode] = useState(true);
 
+    const handleThemeToggle = () => {
+        setLightMode(!lightMode);
+        if (lightMode) {
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+        }
+    };
+
     return (
         <>
-            <TodoHeader lightMode={lightMode} setLightMode={setLightMode} />
+            <TodoHeader lightMode={lightMode} onToggle={handleThemeToggle} />
             <TodoForm />
             <TodoList />
             <TodoListFilter />
