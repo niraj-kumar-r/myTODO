@@ -29,11 +29,17 @@ function App() {
         setTodoList([...todoList, { text, completed: false }]);
     };
 
+    const handleCompleteTodo = (index) => {
+        const newTodoList = [...todoList];
+        newTodoList[index].completed = !newTodoList[index].completed;
+        setTodoList(newTodoList);
+    };
+
     return (
         <>
             <TodoHeader lightMode={lightMode} onToggle={handleThemeToggle} />
             <TodoForm onSubmit={handleAddTodo} />
-            <TodoList todoList={todoList} />
+            <TodoList todoList={todoList} onComplete={handleCompleteTodo} />
             <TodoListFilter />
             <TodoFooter />
         </>

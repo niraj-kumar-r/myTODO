@@ -12,6 +12,10 @@ body.dark {
     background-color: #1a1a1a;
 }
 
+.strikethrough {
+    text-decoration: line-through;
+}
+
 .logo {
     height: 6em;
     padding: 1.5em;
