@@ -11,6 +11,7 @@ function App() {
         JSON.parse(localStorage.getItem("todoList")) || []
     );
     const [lightMode, setLightMode] = useState(true);
+    const [filter, setFilter] = useState("all");
 
     useEffect(() => {
         localStorage.setItem("todoList", JSON.stringify(todoList));
@@ -41,16 +42,27 @@ function App() {
         setTodoList(newTodoList);
     };
 
+    const handleClearCompleted = () => {
+        const newTodoList = todoList.filter((todo) => !todo.completed);
+        setTodoList(newTodoList);
+    };
+
     return (
         <>
             <TodoHeader lightMode={lightMode} onToggle={handleThemeToggle} />
             <TodoForm onSubmit={handleAddTodo} />
             <TodoList
                 todoList={todoList}
+                filter={filter}
                 onComplete={handleCompleteTodo}
                 onDelete={handleDeleteTodo}
             />
-            <TodoListFilter />
+            <TodoListFilter
+                count={todoList.length}
+                filter={filter}
+                onFilterToggle={setFilter}
+                clearCompleted={handleClearCompleted}
+            />
             <TodoFooter />
         </>
     );
