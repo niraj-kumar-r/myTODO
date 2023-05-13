@@ -65,3 +65,31 @@ header {
     font-size: 2.2rem;
     letter-spacing: 1.2rem;
 }
+
+.todo-form > input {
+    min-width: clamp(20rem, 37.5vw, 100%);
+    min-height: 3.55rem;
+    border: none;
+    padding: 0;
+    border-radius: 5px;
+}
+.todo-list {
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.todo-item {
+    background-color: var(--white);
+    min-width: clamp(20rem, 37.5vw, 100%);
+    min-height: 3.55rem;
+    /* border: none; */
+    padding: 0;
+    border-color: var(--very-light-grayish-blue);
+    border-style: solid;
+    /* border-radius: 5px; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

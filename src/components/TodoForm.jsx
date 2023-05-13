@@ -20,7 +20,7 @@ export default function TodoForm({ onSubmit }) {
                 type="text"
                 name="todo"
                 value={text}
-                placeholder="What needs to be done?"
+                placeholder="Create a new todo..."
                 onChange={handleChange}
             />
         </form>
