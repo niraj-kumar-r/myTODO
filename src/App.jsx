@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoHeader from "./components/TodoHeader";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
@@ -7,8 +7,14 @@ import TodoFooter from "./components/TodoFooter";
 import "./App.css";
 
 function App() {
-    const [todoList, setTodoList] = useState([]);
+    const [todoList, setTodoList] = useState(
+        JSON.parse(localStorage.getItem("todoList")) || []
+    );
     const [lightMode, setLightMode] = useState(true);
+
+    useEffect(() => {
+        localStorage.setItem("todoList", JSON.stringify(todoList));
+    }, [todoList]);
 
     const handleThemeToggle = () => {
         setLightMode(!lightMode);

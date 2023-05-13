@@ -1,15 +1,12 @@
 import PropTypes from "prop-types";
+import cross from "../assets/images/icon-cross.svg";
 
 export default function TodoItem({ todo }) {
     return (
         <li className="todo-item">
-            <div className="todo-item-left">
-                <input type="checkbox" />
-                <span>{todo}</span>
-            </div>
-            <div className="todo-item-right">
-                <button className="remove-todo">X</button>
-            </div>
+            <input type="checkbox" />
+            <span>{todo}</span>
+            <img src={cross} alt="Delete" />
         </li>
     );
 }
