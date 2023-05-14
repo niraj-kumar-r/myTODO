@@ -7,35 +7,12 @@
 
     font-family: "Josefin Sans", sans-serif;
 
-    --bright-blue: hsl(220, 98%, 61%);
-    --check-background: linear-gradient(
-        90deg,
-        hsl(192, 100%, 67%),
-        hsl(280, 87%, 65%)
-    );
+    /* normal config */
 
-    /* Light theme */
-
-    --white: hsl(0, 0%, 100%);
-    --very-light-gray: hsl(0, 0%, 98%);
-    --very-light-grayish-blue: hsl(236, 33%, 92%);
-    --light-grayish-blue: hsl(233, 11%, 84%);
-    --dark-grayish-blue: hsl(236, 9%, 61%);
-    --very-dark-grayish-blue: hsl(235, 19%, 35%);
-
-    /* Dark theme */
-
-    --very-dark-blue: hsl(235, 21%, 11%);
-    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-    --light-grayish-blue: hsl(234, 39%, 85%);
-    --light-grayish-blue-hover: hsl(236, 33%, 92%);
-    --dark-grayish-blue: hsl(234, 11%, 52%);
-    --very-dark-grayish-blue: hsl(233, 14%, 35%);
-    --very-dark-grayish-blue-2: hsl(237, 14%, 26%);
+    color: var(--very-dark-grayish-blue);
 }
 
 body {
-    color: var(--white);
     background-color: var(--very-light-gray);
 
     background-image: url("/images/bg-desktop-light.jpg");
@@ -53,13 +30,15 @@ body.dark {
 
 .strikethrough {
     text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    color: var(--light-grayish-blue);
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 7vh auto 0.5rem;
+    margin: 7vh auto 0.6rem;
 }
 
 .header-TODO {
@@ -70,6 +49,9 @@ header {
 
 .todo-form > input {
     font-family: "Josefin Sans", sans-serif;
+    color: var(--very-dark-grayish-blue);
+    caret-color: var(--bright-blue);
+
     font-size: 1rem;
     min-width: clamp(20rem, 37.5vw, 100%);
     min-height: 3.55rem;
@@ -77,10 +59,19 @@ header {
     padding: 0;
     border-radius: 5px;
 }
+
+.todo-form > input:focus {
+    outline: none;
+}
+
 .todo-list {
     list-style: none;
     padding: 0;
     border-radius: 5px;
+    background-color: var(--very-light-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .todo-item {
@@ -89,11 +80,16 @@ header {
     min-height: 3.55rem;
     /* border: none; */
     padding: 0;
-    border-color: var(--very-light-grayish-blue);
-    border-style: solid;
+    margin: 0px 0 1px;
+    /* border-color: var(--very-light-grayish-blue);
+    border-style: solid; */
     /* border-radius: 5px; */
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.todo-list > .todo-item:first-child {
+    border-radius: 5px 5px 0 0;
 }
