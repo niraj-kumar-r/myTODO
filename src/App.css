@@ -47,6 +47,8 @@ body {
 body.dark {
     color: #f9f9f9;
     background-color: #1a1a1a;
+
+    background-image: url("/images/bg-desktop-dark.jpg");
 }
 
 .strikethrough {
@@ -57,7 +59,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 7vh auto 2.66rem;
+    margin: 7vh auto 0.5rem;
 }
 
 .header-TODO {
@@ -67,6 +69,8 @@ header {
 }
 
 .todo-form > input {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1rem;
     min-width: clamp(20rem, 37.5vw, 100%);
     min-height: 3.55rem;
     border: none;
