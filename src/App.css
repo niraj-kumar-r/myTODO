@@ -117,10 +117,17 @@ header {
 
 .todo-checkbox-cross {
     margin: auto 1.5rem;
-    /* display: none; */
+    cursor: pointer;
+    display: none;
+}
+
+.todo-item:hover .todo-checkbox-cross,
+.todo-item:focus .todo-checkbox-cross {
+    display: block;
 }
 
 .todo-checkbox {
+    cursor: pointer;
     position: absolute;
     left: 1.2rem;
     appearance: none;
