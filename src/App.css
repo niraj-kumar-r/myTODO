@@ -39,6 +39,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 7vh auto 0.6rem;
+    width: clamp(20rem, 37.5vw, 100%);
 }
 
 .header-TODO {
@@ -53,10 +54,10 @@ header {
     caret-color: var(--bright-blue);
 
     font-size: 1rem;
-    min-width: clamp(20rem, 37.5vw, 100%);
+    width: calc(clamp(20rem, 37.5vw, 100%) - 5rem);
     min-height: 3.55rem;
     border: none;
-    padding: 0;
+    padding: 0 1rem 0 4rem;
     border-radius: 5px;
 }
 
@@ -67,16 +68,19 @@ header {
 .todo-list {
     list-style: none;
     padding: 0;
+    margin: 1rem auto;
     border-radius: 5px;
     background-color: var(--very-light-grayish-blue);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    width: clamp(20rem, 37.5vw, 100%);
 }
 
 .todo-item {
     background-color: var(--white);
-    min-width: clamp(20rem, 37.5vw, 100%);
+    /* width: clamp(20rem, 37.5vw, 100%); */
+    width: inherit;
     min-height: 3.55rem;
     /* border: none; */
     padding: 0;
@@ -88,13 +92,32 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .todo-list > .todo-item:first-child {
     border-radius: 5px 5px 0 0;
 }
 
-/* .todo-checkbox {
+.todo-checkbox {
     position: absolute;
-    opacity: 0;
-} */
+    left: 1.2rem;
+    /* opacity: 0; */
+}
+
+.todo-checkbox-label {
+    display: inline-block;
+    position: relative;
+    padding-left: 4rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+
+    word-wrap: break-word;
+    max-width: calc(clamp(20rem, 37.5vw, 100%) - 10rem);
+}
+
+.todo-checkbox-cross {
+    margin: auto 1.5rem;
+    /* display: none; */
+}

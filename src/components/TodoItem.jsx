@@ -13,8 +13,18 @@ export default function TodoItem({ index, todo, onComplete, onDelete }) {
                 className="todo-checkbox"
                 id={"myCheckbox" + index}
             />
-            <label htmlFor={"myCheckbox" + index}>{todo.text}</label>
-            <img src={cross} alt="Delete" onClick={onDelete} />
+            <label
+                htmlFor={"myCheckbox" + index}
+                className="todo-checkbox-label"
+            >
+                {todo.text}
+            </label>
+            <img
+                className="todo-checkbox-cross"
+                src={cross}
+                alt="Delete"
+                onClick={onDelete}
+            />
         </li>
     );
 }
