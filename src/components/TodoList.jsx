@@ -19,6 +19,7 @@ export default function TodoList({ todoList, filter, onComplete, onDelete }) {
             {newTodoList.map((todo, index) => (
                 <TodoItem
                     key={index}
+                    index={index}
                     todo={todo}
                     onComplete={() => onComplete(index)}
                     onDelete={() => onDelete(index)}
