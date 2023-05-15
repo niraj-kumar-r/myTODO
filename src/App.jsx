@@ -27,7 +27,9 @@ function App() {
     };
 
     const handleAddTodo = (text) => {
-        setTodoList([...todoList, { text, completed: false }]);
+        if (text !== "") {
+            setTodoList([...todoList, { text, completed: false }]);
+        }
     };
 
     const handleCompleteTodo = (index) => {

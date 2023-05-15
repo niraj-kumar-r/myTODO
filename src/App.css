@@ -48,6 +48,15 @@ header {
     letter-spacing: 1.2rem;
 }
 
+.todo-form {
+    position: relative;
+    width: clamp(20rem, 37.5vw, 100%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+}
+
 .todo-form > input {
     font-family: "Josefin Sans", sans-serif;
     color: var(--very-dark-grayish-blue);
@@ -79,15 +88,10 @@ header {
 
 .todo-item {
     background-color: var(--white);
-    /* width: clamp(20rem, 37.5vw, 100%); */
     width: inherit;
     min-height: 3.55rem;
-    /* border: none; */
     padding: 0;
     margin: 0px 0 1px;
-    /* border-color: var(--very-light-grayish-blue);
-    border-style: solid; */
-    /* border-radius: 5px; */
 
     display: flex;
     justify-content: space-between;
@@ -97,12 +101,6 @@ header {
 
 .todo-list > .todo-item:first-child {
     border-radius: 5px 5px 0 0;
-}
-
-.todo-checkbox {
-    position: absolute;
-    left: 1.2rem;
-    /* opacity: 0; */
 }
 
 .todo-checkbox-label {
@@ -120,4 +118,42 @@ header {
 .todo-checkbox-cross {
     margin: auto 1.5rem;
     /* display: none; */
+}
+
+.todo-checkbox {
+    position: absolute;
+    left: 1.2rem;
+    appearance: none;
+    outline: none;
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 0.05rem solid var(--light-grayish-blue);
+    border-radius: 100%;
+}
+
+.todo-checkbox:hover,
+.todo-checkbox:focus,
+.todo-checkbox:checked {
+    border: double 0.05rem transparent;
+    border-radius: 100%;
+    background-image: linear-gradient(white, white), var(--check-background);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.todo-checkbox:checked {
+    background-image: var(--check-background);
+}
+
+.todo-checkbox:checked::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("/images/icon-check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
 }

@@ -16,6 +16,7 @@ export default function TodoForm({ onSubmit }) {
 
     return (
         <form className="todo-form" onSubmit={handleSubmit}>
+            <div className="todo-checkbox" onClick={handleSubmit}></div>
             <input
                 type="text"
                 name="todo"
