@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import TodoHeader from "./components/TodoHeader";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
-import TodoListFilter from "./components/TodoListFilter";
+// import TodoListFilter from "./components/TodoListFilter";s
 import TodoFooter from "./components/TodoFooter";
 import "./App.css";
 
@@ -53,18 +53,25 @@ function App() {
         <>
             <TodoHeader lightMode={lightMode} onToggle={handleThemeToggle} />
             <TodoForm onSubmit={handleAddTodo} />
+            {/* <div className="list-container"> */}
             <TodoList
                 todoList={todoList}
                 filter={filter}
+                onFilterToggle={setFilter}
                 onComplete={handleCompleteTodo}
                 onDelete={handleDeleteTodo}
-            />
-            <TodoListFilter
-                count={todoList.length}
-                filter={filter}
-                onFilterToggle={setFilter}
                 clearCompleted={handleClearCompleted}
             />
+            {/* <TodoListFilter
+                    count={todoList.reduce(
+                        (count, todo) => (todo.completed ? count : count + 1),
+                        0
+                    )}
+                    filter={filter}
+                    onFilterToggle={setFilter}
+                    clearCompleted={handleClearCompleted}
+                /> */}
+            {/* </div> */}
             <TodoFooter />
         </>
     );

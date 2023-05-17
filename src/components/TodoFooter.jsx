@@ -9,7 +9,15 @@ export default function TodoItem() {
             >
                 Frontend Mentor
             </a>
-            . Coded by <a href="#">Your Name Here</a>.
+            . Coded by{" "}
+            <a
+                href="https://github.com/niraj-kumar-r/myTODO"
+                target="_blank"
+                rel="noreferrer"
+            >
+                Niraj Kumar
+            </a>
+            .
         </div>
     );
 }

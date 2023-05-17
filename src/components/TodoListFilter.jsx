@@ -7,8 +7,8 @@ export default function TodoListFilter({
     clearCompleted,
 }) {
     return (
-        <div>
-            <div>
+        <div className="todo-filter">
+            <div className="todo-count">
                 <strong>{count}</strong> items left
             </div>
             <div className="todo-list-filter">
@@ -16,22 +16,22 @@ export default function TodoListFilter({
                     className={filter === "all" ? "selected" : ""}
                     onClick={() => onFilterToggle("all")}
                 >
-                    All
+                    <strong>All</strong>
                 </button>
                 <button
                     className={filter === "active" ? "selected" : ""}
                     onClick={() => onFilterToggle("active")}
                 >
-                    Active
+                    <strong>Active</strong>
                 </button>
                 <button
                     className={filter === "completed" ? "selected" : ""}
                     onClick={() => onFilterToggle("completed")}
                 >
-                    Completed
+                    <strong>Completed</strong>
                 </button>
             </div>
-            <div>
+            <div className="todo-clear-completed">
                 <button onClick={clearCompleted}>Clear completed</button>
             </div>
         </div>

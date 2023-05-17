@@ -1,7 +1,15 @@
 import TodoItem from "./TodoItem";
+import TodoListFilter from "./TodoListFilter";
 import PropTypes from "prop-types";
 
-export default function TodoList({ todoList, filter, onComplete, onDelete }) {
+export default function TodoList({
+    todoList,
+    filter,
+    onFilterToggle,
+    onComplete,
+    onDelete,
+    clearCompleted,
+}) {
     let newTodoList = [...todoList];
     switch (filter) {
         case "active":
@@ -25,6 +33,15 @@ export default function TodoList({ todoList, filter, onComplete, onDelete }) {
                     onDelete={() => onDelete(index)}
                 />
             ))}
+            <TodoListFilter
+                count={todoList.reduce(
+                    (count, todo) => (todo.completed ? count : count + 1),
+                    0
+                )}
+                filter={filter}
+                onFilterToggle={onFilterToggle}
+                clearCompleted={clearCompleted}
+            />
         </ul>
     );
 }
@@ -32,6 +49,8 @@ export default function TodoList({ todoList, filter, onComplete, onDelete }) {
 TodoList.propTypes = {
     todoList: PropTypes.array.isRequired,
     filter: PropTypes.string.isRequired,
+    onFilterToggle: PropTypes.func.isRequired,
     onComplete: PropTypes.func.isRequired,
     onDelete: PropTypes.func.isRequired,
+    clearCompleted: PropTypes.func.isRequired,
 };
