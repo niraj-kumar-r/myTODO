@@ -16,22 +16,33 @@
 
     /* Light theme */
 
-    --white: hsl(0, 0%, 100%);
-    --very-light-gray: hsl(0, 0%, 98%);
-    --very-light-grayish-blue: hsl(236, 33%, 92%);
-    --light-grayish-blue: hsl(233, 11%, 84%);
-    --dark-grayish-blue: hsl(236, 9%, 61%);
-    --very-dark-grayish-blue: hsl(235, 19%, 35%);
+    --white-light: hsl(0, 0%, 100%);
+    --very-light-gray-light: hsl(0, 0%, 98%);
+    --very-light-grayish-blue-light: hsl(236, 33%, 92%);
+    --light-grayish-blue-light: hsl(233, 11%, 84%);
+    --dark-grayish-blue-light: hsl(236, 9%, 61%);
+    --very-dark-grayish-blue-light: hsl(235, 19%, 35%);
 
     /* Dark theme */
 
-    --very-dark-blue: hsl(235, 21%, 11%);
-    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-    --light-grayish-blue: hsl(234, 39%, 85%);
-    --light-grayish-blue-hover: hsl(236, 33%, 92%);
-    --dark-grayish-blue: hsl(234, 11%, 52%);
-    --very-dark-grayish-blue: hsl(233, 14%, 35%);
-    --very-dark-grayish-blue-2: hsl(237, 14%, 26%);
+    --very-dark-blue-dark: hsl(235, 21%, 11%);
+    --very-dark-desaturated-blue-dark: hsl(235, 24%, 19%);
+    --light-grayish-blue-dark: hsl(234, 39%, 85%);
+    --light-grayish-blue-hover-dark: hsl(236, 33%, 92%);
+    --dark-grayish-blue-dark: hsl(234, 11%, 52%);
+    --very-dark-grayish-blue-dark: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue-2-dark: hsl(237, 14%, 26%);
+
+    /* actual properties */
+
+    --background-color: var(--white-light);
+    --secondary-background-color: var(--very-light-gray-light);
+    --tertiary-background-color: var(--very-light-grayish-blue-light);
+    --text-color: var(--very-dark-grayish-blue-light);
+    --secondary-text-color: var(--dark-grayish-blue-light);
+    --done-text-color: var(--light-grayish-blue-light);
+    --text-color-hover: var(--very-dark-grayish-blue-light);
+    --accent-color: var(--bright-blue);
 }
 
 a {
@@ -49,14 +60,4 @@ body {
     place-items: top center;
     min-width: 320px;
     min-height: 100vh;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
 }

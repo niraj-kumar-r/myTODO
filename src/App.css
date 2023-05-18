@@ -6,14 +6,23 @@
     font-size: 18px;
 
     font-family: "Josefin Sans", sans-serif;
+}
 
-    /* normal config */
+body.dark {
+    background-image: url("/images/bg-desktop-dark.jpg");
 
-    color: var(--very-dark-grayish-blue);
+    --background-color: var(--very-dark-desaturated-blue-dark);
+    --secondary-background-color: var(--very-dark-blue-dark);
+    --tertiary-background-color: var(--very-dark-grayish-blue-2-dark);
+    --text-color: var(--light-grayish-blue-dark);
+    --secondary-text-color: var(--dark-grayish-blue-dark);
+    --done-text-color: var(--very-dark-grayish-blue-dark);
+    --text-color-hover: var(--light-grayish-blue-hover-dark);
 }
 
 body {
-    background-color: var(--very-light-gray);
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
 
     background-image: url("/images/bg-desktop-light.jpg");
     background-repeat: no-repeat;
@@ -21,17 +30,10 @@ body {
     background-size: clamp(1440px, 100%, 100%) clamp(300px, 37.5vh, 100%);
 }
 
-body.dark {
-    color: #f9f9f9;
-    background-color: #1a1a1a;
-
-    background-image: url("/images/bg-desktop-dark.jpg");
-}
-
 .strikethrough {
     text-decoration: line-through;
     text-decoration-thickness: 1px;
-    color: var(--light-grayish-blue);
+    color: var(--done-text-color);
 }
 
 header {
@@ -43,7 +45,7 @@ header {
 }
 
 .header-TODO {
-    color: var(--white);
+    color: var(--white-light);
     font-size: 2.2rem;
     letter-spacing: 1.2rem;
 }
@@ -59,8 +61,9 @@ header {
 
 .todo-form > input {
     font-family: "Josefin Sans", sans-serif;
-    color: var(--very-dark-grayish-blue);
-    caret-color: var(--bright-blue);
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+    background-color: var(--background-color);
 
     font-size: 1rem;
     width: calc(clamp(20rem, 37.5vw, 100%) - 5rem);
@@ -74,12 +77,16 @@ header {
     outline: none;
 }
 
+.todo-form > input::placeholder {
+    color: var(--secondary-text-color);
+}
+
 .todo-list {
     list-style: none;
     padding: 0;
     margin: 1rem auto 0;
     border-radius: 5px;
-    background-color: var(--very-light-grayish-blue);
+    background-color: var(--tertiary-background-color);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -93,8 +100,18 @@ header {
         0px 21.5px 40px rgba(0, 0, 0, 0.015), 0px 43px 80px rgba(0, 0, 0, 0.02);
 }
 
+body.dark .todo-list {
+    box-shadow: 0px 3.5px 1.8px rgba(0, 0, 0, 0.18),
+        0px 8.2px 4.3px rgba(0, 0, 0, 0.134),
+        0px 14.7px 7.6px rgba(0, 0, 0, 0.113),
+        0px 24.4px 12.7px rgba(0, 0, 0, 0.097),
+        0px 40.2px 20.9px rgba(0, 0, 0, 0.083),
+        0px 70.3px 36.5px rgba(0, 0, 0, 0.067),
+        0px 152px 79px rgba(0, 0, 0, 0.046);
+}
+
 .todo-item {
-    background-color: var(--white);
+    background-color: var(--background-color);
     width: inherit;
     min-height: 3.55rem;
     padding: 0;
@@ -115,7 +132,7 @@ header {
     display: inline-block;
     position: relative;
     padding-left: 4rem;
-    margin: 0.5rem 0 0.5rem 2rem;
+    margin: 0.5rem 0 0.5rem 0rem;
     text-align: left;
     cursor: pointer;
     font-size: 1rem;
@@ -143,7 +160,7 @@ header {
     outline: none;
     width: 1.4rem;
     height: 1.4rem;
-    border: 0.05rem solid var(--light-grayish-blue);
+    border: 0.05rem solid var(--done-text-color);
     border-radius: 100%;
 }
 
@@ -152,7 +169,11 @@ header {
 .todo-checkbox:checked {
     border: double 0.05rem transparent;
     border-radius: 100%;
-    background-image: linear-gradient(white, white), var(--check-background);
+    background-image: linear-gradient(
+            var(--background-color),
+            var(--background-color)
+        ),
+        var(--check-background);
     background-origin: border-box;
     background-clip: padding-box, border-box;
 }
@@ -178,7 +199,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--white);
+    background-color: var(--background-color);
     /* background-color: red; */
     min-height: 3.55rem;
     border-bottom-left-radius: 5px;
@@ -189,6 +210,7 @@ header {
     font-size: 0.66rem;
     margin-left: 1.2rem;
     margin-right: auto;
+    color: var(--secondary-text-color);
 }
 
 .todo-clear-completed {
@@ -203,16 +225,26 @@ button {
     font-size: 0.66rem;
 
     font-family: inherit;
-    color: var(--dark-grayish-blue);
+    color: var(--secondary-text-color);
     /* background-color: #1a1a1a; */
     cursor: pointer;
     transition: border-color 0.25s;
 }
 button:hover,
 button:focus {
-    color: var(--very-dark-grayish-blue);
+    color: var(--text-color-hover);
 }
 
 .selected {
-    color: var(--bright-blue);
+    color: var(--accent-color);
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-image: url("/images/bg-mobile-light.jpg");
+    }
+
+    body.dark {
+        background-image: url("/images/bg-mobile-dark.jpg");
+    }
 }
