@@ -16,7 +16,7 @@ body {
 }
 
 #root {
-    min-width: clamp(16rem, 37.5vw, 100%);
+    min-width: clamp(17rem, 37.5vw, 100%);
     margin: 0 auto;
     padding: 0 2rem 2rem;
     text-align: center;
