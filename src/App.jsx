@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import TodoHeader from "./components/TodoHeader";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import TodoSelectFilter from "./components/TodoSelectFilter";
 import TodoFooter from "./components/TodoFooter";
 import "./App.css";
 
@@ -55,6 +56,8 @@ function App() {
         setTodoList(newTodoList);
     };
 
+    const isMobile = window.innerWidth <= 768;
+
     return (
         <>
             <TodoHeader lightMode={lightMode} onToggle={setLightMode} />
@@ -68,6 +71,9 @@ function App() {
                 onDelete={handleDeleteTodo}
                 clearCompleted={handleClearCompleted}
             />
+            {isMobile && (
+                <TodoSelectFilter filter={filter} onFilterToggle={setFilter} />
+            )}
             <TodoFooter />
         </>
     );
