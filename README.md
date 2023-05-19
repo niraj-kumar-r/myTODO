@@ -74,7 +74,7 @@ In future projects, I would like to focus on the following areas:
 
 ### Useful resources
 
--   [React Documentation](https://reactjs.org/docs) - The official documentation for React.
+-   [React Documentation](https://react.dev/learn) - The official documentation for React.
 
 ## Author
 
