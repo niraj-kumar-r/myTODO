@@ -9,21 +9,28 @@ function App() {
     const [todoList, setTodoList] = useState(
         JSON.parse(localStorage.getItem("todoList")) || []
     );
-    const [lightMode, setLightMode] = useState(true);
-    const [filter, setFilter] = useState("all");
+    const [lightMode, setLightMode] = useState(
+        JSON.parse(localStorage.getItem("themeAndFilter"))?.lightMode ?? true
+    );
+    const [filter, setFilter] = useState(
+        JSON.parse(localStorage.getItem("themeAndFilter"))?.filter || "all"
+    );
 
     useEffect(() => {
         localStorage.setItem("todoList", JSON.stringify(todoList));
     }, [todoList]);
 
-    const handleThemeToggle = () => {
-        setLightMode(!lightMode);
-        if (lightMode) {
+    useEffect(() => {
+        localStorage.setItem(
+            "themeAndFilter",
+            JSON.stringify({ lightMode, filter })
+        );
+        if (!lightMode) {
             document.body.classList.add("dark");
         } else {
             document.body.classList.remove("dark");
         }
-    };
+    }, [lightMode, filter]);
 
     const handleAddTodo = (text) => {
         if (text !== "") {
@@ -50,7 +57,7 @@ function App() {
 
     return (
         <>
-            <TodoHeader lightMode={lightMode} onToggle={handleThemeToggle} />
+            <TodoHeader lightMode={lightMode} onToggle={setLightMode} />
             <TodoForm onSubmit={handleAddTodo} />
             {/* <div className="list-container"> */}
             <TodoList

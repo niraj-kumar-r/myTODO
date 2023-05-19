@@ -55,6 +55,10 @@ header {
     letter-spacing: 1.2rem;
 }
 
+.toggle-theme-button {
+    cursor: pointer;
+}
+
 .todo-form {
     position: relative;
     width: clamp(20rem, 37.5vw, 100%);

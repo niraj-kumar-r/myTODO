@@ -9,7 +9,7 @@ export default function TodoHeader({ lightMode, onToggle }) {
             <img
                 className="toggle-theme-button"
                 src={lightMode ? moon : sun}
-                onClick={onToggle}
+                onClick={() => onToggle(!lightMode)}
             />
         </header>
     );
