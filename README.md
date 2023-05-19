@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [My Solution on Frontend Mentor](https://your-solution-url.com)
+-   Solution URL: [My Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/the-hello-world-of-react-using-vite-6fxo9H46vi)
 -   Live Site URL: [pretty-todos](https://pretty-todos.netlify.app/)
 
 ## My process
@@ -71,6 +71,7 @@ In future projects, I would like to focus on the following areas:
 -   Persisting data using a backend server or database.
 -   Enhancing the UI with animations and transitions.
 -   Improving accessibility and responsiveness for a better user experience.
+-   Working on drag and drop functionality.
 
 ### Useful resources
 
