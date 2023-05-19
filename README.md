@@ -34,10 +34,10 @@ Users should be able to:
 
 ### Screenshot
 
-![desktop-light](./finalResultScreenshots/desktop-light.png)
-![desktop-dark](./finalResultScreenshots/desktop-dark.png)
-![mobile-light](./finalResultScreenshots/mobile-light.png)
-![mobile-dark](./finalResultScreenshots/mobile-dark.png)
+![](./finalResultScreenshots/desktop-light.png)
+![](./finalResultScreenshots/desktop-dark.png)
+![](./finalResultScreenshots/mobile-light.png)
+![](./finalResultScreenshots/mobile-dark.png)
 
 ### Links
 
